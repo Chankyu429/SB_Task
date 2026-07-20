@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using TextGame;
 
 namespace TextGame
@@ -18,8 +18,8 @@ namespace TextGame
             Console.WriteLine("=========================================");
             Console.WriteLine($"HP : {hp}, MP : {mp}, 공격력 : {attack}, 방어력 : {defence}");
         }
-    } //Player
-} //TextGame
+    }//Player
+}//TextGame
 
 class Program
 {
@@ -32,9 +32,9 @@ class Program
         Console.WriteLine("=========================================");
 
         // ----------------------------------------------------
-        // [1단계 & 2단계] 이름 입력 및 검증 (3글자 초과 필수)
+        // 이름 입력 및 검증 (3글자 초과 필수)
         // ----------------------------------------------------
-        while(true)
+        while (true)
         {
             Console.Write("플레이어 이름 : ");
             string inputName = Console.ReadLine();
@@ -50,18 +50,16 @@ class Program
         }
 
         // ----------------------------------------------------
-        // [1단계 & 2단계] HP, MP 입력 및 검증 (HP >= 60, MP >= 40)
+        //  HP, MP 입력 및 검증 (HP >= 60, MP >= 40)
         // ----------------------------------------------------
 
-        while(true)
+        while (true)
         {
             Console.Write("HP, MP : ");
             string input = Console.ReadLine();
 
-            // ","를 기준으로 문자열 분할 후 공백 제거
-
             string[] parts = input.Split(',');
-            if(parts.Length < 2)
+            if (parts.Length < 2)
             {
                 Console.WriteLine("올바른 형식으로 입력해주세요. (예 : 100, 50)");
                 continue;
@@ -87,7 +85,7 @@ class Program
         }
 
         // ----------------------------------------------------
-        // [1단계 & 2단계] 공격력, 방어력 입력 및 검증 (공격력 >= 15, 방어력 >= 5)
+        // 공격력, 방어력 입력 및 검증 (공격력 >= 15, 방어력 >= 5)
         // ----------------------------------------------------
 
         while (true)
@@ -125,7 +123,7 @@ class Program
         player.ShowStatus();
 
         // ----------------------------------------------------
-        // [3단계] 상태 관리 및 강화 메뉴
+        // 상태 관리 및 강화 메뉴
         // ----------------------------------------------------
         // 초기 지급 아이템 개수
         int hpPotions = 3;
@@ -138,7 +136,7 @@ class Program
 
         bool bGameStart = false;
 
-        while(!bGameStart)
+        while (!bGameStart)
         {
             Console.WriteLine("\n=========================================");
             Console.WriteLine($"< {player.name} 강화 >");
@@ -171,7 +169,7 @@ class Program
                 case "2":
                     if (mpPotions > 0)
                     {
-                        player.mp += 10;
+                        player.mp += 20;
                         mpPotions--;
                         Console.WriteLine($"** MP가 10 증가했습니다. (MP 포션 -1 => 남은 포션 {mpPotions}개)");
                     }
@@ -224,4 +222,4 @@ class Program
             }
         }
     }
-} //Main
+}//Main
