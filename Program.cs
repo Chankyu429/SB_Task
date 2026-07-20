@@ -234,8 +234,19 @@ namespace TextBasedGame
                 else if (jobChoice == "2") selectedJob = "마법사";
                 else if (jobChoice == "3") selectedJob = "도적";
                 else if (jobChoice == "4") selectedJob = "궁수";
+                else
+                {
+                    Console.WriteLine("올바른 번호를 선택해주세요.");
+                    continue;
+                }
+
+                player.Job = selectedJob;
+                Console.WriteLine($"* [{selectedJob}]로 전직했습니다.");
+                break;
             }
 
+            //전직 완료 후 최종 상태창 출력
+            player.ShowStatus();
         }//Main
     }
 }
