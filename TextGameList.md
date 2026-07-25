@@ -26,9 +26,9 @@
 ---
 
 ### 생성자를 통한 초기화
-> 💡(Player(string name, float hp, float mp, float power, float defence))
+> 💡(Player(string name, float hp, float mp, float attack, float defence))
 
-> ✨캐릭터가 처음 생성될 때 기본 직업("없음")과 레벨(1)
+> ✨캐릭터가 처음 생성될 때 기본 직업("초보자")과 레벨(1)
 
 ```csharp
 public Player(string name, float hp, float mp, float power, float defence)
