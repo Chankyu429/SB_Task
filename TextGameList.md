@@ -34,12 +34,12 @@
 public Player(string name, float hp, float mp, float power, float defence)
 {
     Name = name;
-    Hp = hp;
-    Mp = mp;
-    Attack = power;
-    Deffence = defence;
-    Job = "없음"; 
-    Level = 1;    
+    hp = hp;
+    mp = mp;
+    attack = attack;
+    deffence = defence;
+    job = "초보자"; 
+    level = 1;    
 }
 ```
 
