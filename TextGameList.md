@@ -26,14 +26,6 @@
 
 ---
 
-### 객체지향 설계 도입 및 직업 선택
-> ‼️목표: 객체지향 프로그래밍(OOP)의 핵심 문법 **생성자**와 **프로퍼티**를 사용하여 클래스 구조를 안전하게 개선하고, 게임 시작 후 캐릭터를 성장시킬 수 있는 전직(직업 선택) 시스템
-- **생성자 (Constructor)**: 객체가 메모리에 생성되는 타이밍에 이름, HP, MP, 공격력, 방어력을 강제하여 필수 데이터가 누락된 채 캐릭터가 만들어지는 것을 방지
-- **프로퍼티 (Property - Getter)**: 클래스 내부의 필드 데이터를 외부에 무분별하게 노출하지 않고 안전하게 캡슐화하면서, 외부에서는 값만 안전하게 읽어갈 수 있도록 제어(``{ get; set; }`` 및 ``{ get; }``)
-- **조건문을 활용한 데이터 동적 매칭**: 유저가 선택한 번호(1~4)에 따라 직업 문자열을 동적으로 할당하고, 조건에 맞지 않는 번호 입력 시 루프를 재실행하는 유효성 검증
-
----
-
 ### 생성자를 통한 초기화
 > 💡(Player(string name, float hp, float mp, float power, float defence))
 
@@ -54,12 +46,10 @@ public Player(string name, float hp, float mp, float power, float defence)
 
 ---
 
-### 멤버 변수(job, level) 추가 및 Getter 프로퍼티 작성
-> Player 클래스의 맨 윗부분에 클래스 외부에서 안전하게 데이터를 가져갈 수 있도록 Getter 프로퍼티 형태
->    > 💡 특히 Name은 외부에서 임의로 수정할 수 없게 get;만 열어두어 Getter로 만듬
-
 ```csharp
-public string Name { get; }      // Getter 프로퍼티
-public string Job { get; set; }   // 직업 멤버 추가
-public int Level { get; set; }    // 레벨 멤버 추가
+Console.OutputEncoding = System.Text.Encoding.UTF8;
 ```
+이모티콘을 코드에 사용할 때 ``??``로 깨지는 걸 방지하는 코
+> 저장 방식 (인코딩) : 콘솔 창이 기본적으로 이모지를 인식하지 못해, 문자를 표현 하는 방식을 UTF-8로 맞추는 코드라고 함
+> 
+> 원도우 버전에 따라서 보이는 이모지가 달라질 수도 있다고 함.
