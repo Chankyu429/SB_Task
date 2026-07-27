@@ -48,7 +48,7 @@ public Player(string name, float hp, float mp, float power, float defence)
 ```csharp
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 ```
-이모티콘을 코드에 사용할 때 ``??``로 깨지는 걸 방지하는 코
+### 이모티콘을 코드에 사용할 때 ``??``로 깨지는 걸 방지하는 코드
 > 저장 방식 (인코딩) : 콘솔 창이 기본적으로 이모지를 인식하지 못해, 문자를 표현 하는 방식을 UTF-8로 맞추는 코드라고 함
 > 
 > 원도우 버전에 따라서 보이는 이모지가 달라질 수도 있다고 함.
