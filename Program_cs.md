@@ -3,7 +3,6 @@
 ```csharp
 using System;
 
-//부모 class
 class Player
 {
     public string name;
@@ -367,7 +366,6 @@ class Program
 
         player.ShowStatus();
 
-        //몬스터 생성 및 전투
         Monster monster = new Oak();
         int inventoryHpCoupon = 0; //보상으로 얻을 쿠폰 개수 카운트
 
@@ -379,7 +377,6 @@ class Program
             Console.WriteLine("<" + player.name + "> 턴 시작");
             Console.WriteLine("=========================================");
 
-            // 플레이어 공격
             player.Attack();
             float playerDamage = player.attack - monster.defence;
             if (playerDamage < 1) playerDamage = 1;
@@ -391,7 +388,6 @@ class Program
             Console.WriteLine(monster.name + "에게 " + playerDamage + " 데미지!");
             Console.WriteLine(monster.name + " HP : " + prevMonsterHp + " -> " + monster.hp);
 
-            //몬스터 사망 시
             if (monster.hp <= 0)
             {
                 Console.WriteLine(monster.name + " 사망!!");
@@ -404,13 +400,11 @@ class Program
                 break;
             }
 
-            //몬스터 반격 턴
             Console.WriteLine("\n-----------------------------------------");
             monster.AttackPlayer(player);
             Console.WriteLine(player.name + " 남은 HP : " + player.hp);
             Console.WriteLine("-----------------------------------------");
 
-            //플레이어 사망 시
             if (player.hp <= 0)
             {
                 Console.WriteLine("\n❌ 플레이어가 사망했습니다... 게임 패배!");
