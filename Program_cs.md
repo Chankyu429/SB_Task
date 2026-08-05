@@ -34,7 +34,7 @@ class Player
     public void ShowStatus()
     {
         Console.WriteLine("\n◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈");
-        Console.WriteLine("             [ " + name + "의 상태창 ]");
+        Console.WriteLine("           [ " + name + "의 상태창 ]");
         Console.WriteLine("-----------------------------------------");
 
         if (job != "초보자")
@@ -58,7 +58,7 @@ class Novice : Player
 
     public override void Attack()
     {
-        Console.WriteLine("맨손 공격!");
+        Console.WriteLine("주먹 공격!");
     }
 }
 
@@ -101,7 +101,7 @@ class Thief : Player
 
     public override void Attack()
     {
-        Console.WriteLine("도적의 암살 공격!");
+        Console.WriteLine("도적의 뒷덜미 공격!");
     }
 }
 
@@ -115,11 +115,10 @@ class Archer : Player
 
     public override void Attack()
     {
-        Console.WriteLine("궁수의 정밀한 화살 쏘기!");
+        Console.WriteLine("궁수의 날카로운 화살 쏘기!");
     }
 }
 
-// 몬스터 부모 class
 class Monster
 {
     public string name;
@@ -174,7 +173,7 @@ class Program
         //시작화면
         Console.WriteLine("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
         Console.WriteLine("■                                         ■");
-        Console.WriteLine("■           캐릭터 생성을 시작합니다          ■");
+        Console.WriteLine("■         캐릭터 생성을 시작합니다          ■");
         Console.WriteLine("■                                         ■");
         Console.WriteLine("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 
@@ -209,7 +208,7 @@ class Program
 
         while (true)
         {
-            Console.Write(" ▶ 공격력, 방어력 (예: 20,4) : ");
+            Console.Write(" ▶ 공격력, 방어력 (예: 20,5) : ");
             string[] atkDefInput = Console.ReadLine()!.Split(',');
 
             inputAttack = float.Parse(atkDefInput[0]);
@@ -239,7 +238,7 @@ class Program
         {
             //메뉴창 꾸며봄
             Console.WriteLine("◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈");
-            Console.WriteLine("             < " + player.name + " 강화 메뉴 >");
+            Console.WriteLine("          < " + player.name + " 강화 메뉴 >");
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine("  [1] HP Up ");
             Console.WriteLine("  [2] MP Up");
@@ -320,13 +319,13 @@ class Program
 
         //특수문자(?) 사이트가서 찾아옴
         Console.WriteLine("\n★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★");
-        Console.WriteLine("★                                     ★");
-        Console.WriteLine("★          GAME START!!!!             ★");
-        Console.WriteLine("★                                     ★");
+        Console.WriteLine("★                                       ★");
+        Console.WriteLine("★            GAME START!!!!             ★");
+        Console.WriteLine("★                                       ★");
         Console.WriteLine("★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★\n");
 
         Console.WriteLine("◈━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━◈");
-        Console.WriteLine("          < " + player.name + " 직업 선택 >");
+        Console.WriteLine("         < " + player.name + " 직업 선택 >");
         Console.WriteLine("-----------------------------------------");
         Console.WriteLine("  [1] 전사");
         Console.WriteLine("  [2] 마법사");
@@ -396,7 +395,7 @@ class Program
                 inventoryHpCoupon++;
                 Console.WriteLine(" => \"" + monster.dropItemName + "\" 획득");
                 Console.WriteLine(" => (" + monster.dropItemName + " +1 => 남은 쿠폰 " + inventoryHpCoupon + "개)");
-                Console.WriteLine(" => 다음 단계에서 인벤토리에 저장");
+                Console.WriteLine(" => 다음 스테이지에서 인벤토리에 저장");
                 break;
             }
 
@@ -407,11 +406,11 @@ class Program
 
             if (player.hp <= 0)
             {
-                Console.WriteLine("\n❌ 플레이어가 사망했습니다... 게임 패배!");
+                Console.WriteLine("\n❌ 플레이어가 사망했습니다.. 게임 패배!");
                 break;
             }
 
-            Console.WriteLine("\n다음 턴으로 넘어가려면 엔터를 누르세요...");
+            Console.WriteLine("\n다음 스테이지로 넘어가려면 엔터를 누르세요..");
             Console.ReadLine();
         }
     }
